@@ -1,0 +1,37 @@
+// Project: 
+version = '0.1'
+
+// Java components
+apply plugin: 'java'
+
+// IDE support
+apply plugin: 'eclipse'
+
+// Run support
+apply plugin:'application'
+
+// Language support
+sourceCompatibility = 1.7
+
+// Repositories
+repositories {
+    mavenCentral()
+}
+
+// External dependencies
+dependencies {
+    // OpenCV bindings
+    compile fileTree(dir: 'lib/javacv-bin', include: '*.jar')
+    // Google collections (Guava)
+    compile group: 'com.google.guava', name: 'guava', version: '13.0'
+
+    // Logging
+    compile([group: 'org.slf4j', name: 'slf4j-api', version: '1.6.6'], 
+            [group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.6'])
+
+    // Junit
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+// Location of main (for running)
+mainClassName = ""
